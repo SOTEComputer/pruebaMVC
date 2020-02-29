@@ -137,10 +137,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\BD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BD.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tabla.cs">
+      <DependentUpon>BD.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -156,6 +164,12 @@
     <Content Include="Models\BD.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BD.Context.cs</LastGenOutput>
+      <DependentUpon>BD.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\BD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BD.edmx</DependentUpon>
+      <LastGenOutput>BD.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -163,9 +177,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BD.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\BD.edmx.diagram">
+    <Content Include="Models\BD.edmx.diagram">
       <DependentUpon>BD.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
